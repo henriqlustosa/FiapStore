@@ -1,17 +1,12 @@
-﻿using FiapStore.Entidade;
+﻿using FiapStore.Entity;
 
 namespace FiapStore.Interface
 {
-    public interface IUsuarioRepository
+    public interface IUsuarioRepository : IRepository<Usuario>
     {
-        IList<Usuario> ObterTodosUsuarios();
-        Usuario ObterUsuarioPorId(int id);
+        Usuario GetWithOrders(int id);
 
-        void CadastrarUsuario(Usuario usuario);
-
-        void AlterarUsuario(Usuario usuario);
-
-        void DeletarUsuario(int id);
+        Usuario GetByUsernameAndPassword(string NomeUsuario, string password);
 
     }
 }

@@ -1,14 +1,15 @@
 ﻿using FiapStore.Entity;
+using FiapStore.Interface;
 
 namespace FiapStore.Interface
 {
-    public interface IRepository<T>    where T : Entidade
+    public interface IRepository<T> where T : Entidade
     {
-        IList<T> ObterTodos();
-        T ObterPorId(int id);
-        void Cadastrar(T entidade);
-        void Alterar(T entidade);
-        void Deletar( int id);
+        IList<T> GetAll();
+        T GetById(int id);
+        void Add(T entidade);
+        void Update(T entidade);
+        void Delete( int id);
 
     }
 }

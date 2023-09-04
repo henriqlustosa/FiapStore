@@ -13,29 +13,17 @@ namespace FiapStore.Repository
         {
             _connectionString = configuration.GetValue<string>("ConnectionStrings:ConnectionString");
         }
-        public void Alterar(T entidade)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Cadastrar(T entidade)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Add(T entity);
 
-        public T ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Delete(int id);
 
-        public IList<T> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract IList<T> GetAll();
+
+        public abstract T GetById(int id);
+
+        public abstract void Update(T entity);
+
     }
 }
