@@ -2,7 +2,7 @@
 
 namespace FiapStore.Logging
 {
-    public class CustomLoggerProvider
+    public class CustomLoggerProvider  : ILoggerProvider
     {
         private readonly CustomLoggerProviderConfiguration _loggerConfig;
         private readonly ConcurrentDictionary<string, CustomLogger> _loggers = new ConcurrentDictionary<string, CustomLogger>();

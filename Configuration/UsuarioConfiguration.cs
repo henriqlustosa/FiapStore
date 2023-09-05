@@ -24,7 +24,7 @@ namespace FiapStore.Configuration
                 .HasColumnType("VARCHAR(50)")
                 .IsRequired();
 
-            builder.Property(u => u.Password)
+            builder.Property(u => u.Senha)
                 .HasColumnType("VARCHAR(50)")
                 .IsRequired();
 

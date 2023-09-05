@@ -8,8 +8,8 @@ namespace FiapStore.Entity
 
         public string Nome { get; set; }
         public string NomeUsuario { get; set; }
-        public string Password { get; set; }
-        public Permissoes Permissao { get; set; }
+        public string Senha { get; set; }
+        public TipoPermissao Permissao { get; set; }
 
         public ICollection<Pedido> Pedidos { get; set; }
 
@@ -21,7 +21,7 @@ namespace FiapStore.Entity
         {
             Nome = addUserDTO.Nome;
             NomeUsuario = addUserDTO.NomeUsuario;
-            Password = addUserDTO.Password;
+            Senha = addUserDTO.Senha;
             Permissao = addUserDTO.Permissao;
         }
 

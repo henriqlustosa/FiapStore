@@ -2,13 +2,13 @@
 {
     public class CustomLogger : ILogger
     {
-        private readonly string _name;
-        private readonly CustomLoggerProviderConfiguration _config;
+        private readonly string _loggerName;
+        private readonly CustomLoggerProviderConfiguration _providerConfiguration;
         private readonly string _logFilePath = @"G:\OneDrive - Default Directory\OneDrive - rede.sp\WorkSpace_Pos_Tech\Fase_1\Desenvolvimento\FiapStore\bin";
         public CustomLogger(string name, CustomLoggerProviderConfiguration config)
         {
-            _name = name;
-            _config = config;
+            _loggerName = name;
+            _providerConfiguration = config;
         }
 
         public IDisposable BeginScope<TState>(TState state)

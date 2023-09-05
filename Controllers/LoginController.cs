@@ -29,14 +29,14 @@ namespace FiapStore.Controllers
         [HttpPost]
         public IActionResult Authenticate([FromBody] LoginDTO loginDTO)
         {
-            var user = _userRepository.GetByUsernameAndPassword(loginDTO.NomeUsuario, loginDTO.Password);
+            var user = _userRepository.GetByUsernameAndPassword(loginDTO.UserName, loginDTO.Password);
 
             if (user == null)
                 return BadRequest("UserName or Password invalid!");
 
             var token = _tokenService.GenerateToken(user);
 
-            user.Password = null;
+            user.Senha = null;
             return Ok(new
             {
                 User = user,
