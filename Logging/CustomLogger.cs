@@ -4,7 +4,7 @@
     {
         private readonly string _loggerName;
         private readonly CustomLoggerProviderConfiguration _providerConfiguration;
-        private readonly string _logFilePath = @"G:\OneDrive - Default Directory\OneDrive - rede.sp\WorkSpace_Pos_Tech\Fase_1\Desenvolvimento\FiapStore\bin";
+        private readonly string _logFilePath = @"C:\Users\henri\OneDrive\Documents\WorkSpace_Pos_Tech\Desenvolvimento\FiapStore\bin";
         public CustomLogger(string name, CustomLoggerProviderConfiguration config)
         {
             _loggerName = name;
