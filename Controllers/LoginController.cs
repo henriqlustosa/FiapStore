@@ -20,7 +20,7 @@ namespace FiapStore.Controllers
         }
 
         /// <summary>
-        /// Authenticate with UserName and Password
+        /// Autenticacao com nome de usuario e senha
         /// </summary>
         /// <param name="loginDTO"></param>
         /// <returns></returns>
@@ -29,7 +29,7 @@ namespace FiapStore.Controllers
         [HttpPost]
         public IActionResult Authenticate([FromBody] LoginDTO loginDTO)
         {
-            var user = _userRepository.GetByUsernameAndPassword(loginDTO.UserName, loginDTO.Password);
+            var user = _userRepository.ObterUsuarioPorNomeDoUsuarioSenha(loginDTO.NomeUsuario, loginDTO.Senha);
 
             if (user == null)
                 return BadRequest("UserName or Password invalid!");

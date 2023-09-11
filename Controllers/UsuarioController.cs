@@ -20,6 +20,37 @@ namespace FiapStore.Controllers
             _logger = logger;
         }
         /// <summary>
+        /// Obter pedidos por usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <remarks>
+        /// Exemplo:
+        /// Enviar 1 o id do usuario
+        /// </remarks>
+        /// <response code = "200">Returns Success</response>
+        /// <response code = "401">Not Authenticated</response>
+        /// <response code = "403">Not Authorized</response> 
+        [Authorize]
+        [Authorize(Roles = Permissoes.Funcionario)]
+        [HttpGet("obter-pedidos-por-usuario/{id}")]
+        public IActionResult ObterPedidosPorUsuario(int id)
+        {
+            try
+            {
+                var usuario = _usuarioRepository.ObterPedidosPorUsuario(id);
+                return Ok(usuario);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,$"Exceção ocorrida no método ObterPedidosPorUsuario(){ex.Message}");
+                return BadRequest("Ocorreu um erro ao obter os pedidos do usuário");
+            }
+        }
+
+
+
+        /// <summary>
         /// Retorna todos os usuarios cadastrados
         /// </summary>
         /// <returns></returns>

@@ -4,9 +4,9 @@ namespace FiapStore.Interface
 {
     public interface IUsuarioRepository : IRepository<Usuario>
     {
-        Usuario GetWithOrders(int id);
+        Usuario ObterPedidosPorUsuario(int id);
 
-        Usuario GetByUsernameAndPassword(string NomeUsuario, string password);
+        Usuario ObterUsuarioPorNomeDoUsuarioSenha(string NomeUsuario, string password);
 
     }
 }

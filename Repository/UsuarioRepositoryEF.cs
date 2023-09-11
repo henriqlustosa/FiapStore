@@ -9,7 +9,7 @@ namespace FiapStore.Repository
         public UsuarioRepositoryEF(ApplicationDbContext context) : base(context)
         {
         }
-        public Usuario GetWithOrders(int id)
+        public Usuario ObterPedidosPorUsuario(int id)
         {
             return _context.Usuario
                     .Include(u => u.Pedidos)
@@ -24,7 +24,7 @@ namespace FiapStore.Repository
         }
 
         //password validation this way for didactic purposes
-        public Usuario GetByUsernameAndPassword(string userName, string password)
+        public Usuario ObterUsuarioPorNomeDoUsuarioSenha(string userName, string password)
         {
             return _context.Usuario.FirstOrDefault(u => u.NomeUsuario == userName && u.Senha == password);
         }

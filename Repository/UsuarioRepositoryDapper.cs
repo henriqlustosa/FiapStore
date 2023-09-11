@@ -44,7 +44,7 @@ namespace FiapStore.Repository
             var query = "SELECT * FROM [Usuario] Where Id = @Id";
             return dbconnection.Query<Usuario>(query, new { Id = id }).FirstOrDefault();
         }
-        public Usuario GetWithOrders(int id)
+        public Usuario ObterPedidosPorUsuario(int id)
         {
             using var dbconnection = new SqlConnection(ConnectionString);
             var query = @"SELECT
@@ -81,7 +81,7 @@ namespace FiapStore.Repository
             return result.Values.FirstOrDefault();
         }
 
-        public Usuario GetByUsernameAndPassword(string userName, string password)
+        public Usuario ObterUsuarioPorNomeDoUsuarioSenha(string userName, string password)
         {
             throw new NotImplementedException();
         }
